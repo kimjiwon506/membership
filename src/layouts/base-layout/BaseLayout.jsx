@@ -1,10 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router";
 
+import * as S from "./BaseLayout.styled";
+
 function BaseLayout() {
   return (
     <>
-    <Outlet />
+    <S.BaseLayoutWrapper>
+      <Outlet />
+    </S.BaseLayoutWrapper>
     </>
   );
 }
