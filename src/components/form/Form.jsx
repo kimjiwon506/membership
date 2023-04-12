@@ -12,30 +12,34 @@ export const Form = forwardRef(function Form(props){
     </FormContext.Provider>
 }) 
 
-const Root = forwardRef(function Root(props){
+const Root = forwardRef(function Root(props,ref){
         return (
-        <S.Root ref={props.ref} action=''>
+        <S.Root ref={ref} action=''>
             {props.children}
         </S.Root>
     )
 });
 
-const Field = forwardRef(function Field(props){
+const Field = forwardRef(function Field(props, ref){
         return (
-        <fieldset>{props.children}</fieldset>
+        <S.Field ref={ref}>{props.children}</S.Field>
     )
 })
 
-const Label = forwardRef(function Label(props){
-    return <label htmlFor="">{props.children}</label>
+const Label = forwardRef(function Label(props, ref){
+    return <S.Label ref={ref}  htmlFor={props.html}>{props.children}</S.Label>
 })
 
-const Control = forwardRef(function Control(props){
-    return <input ref={props.ref} type={props.type} placeholder={props.placeholder} />
+const Control = forwardRef(function Control(props, ref){
+    return <S.Control ref={ref} type={props.type} placeholder={props.placeholder} />
 });
 
+const Submit = function Submit(props){
+    return <S.Submit onClick={props.onClick}>{props.children}</S.Submit>
+}
+
 const TextMessage = function TextMessage(props){
-    return <p>{props.children}</p>
+    return <S.TextMessage>{props.children}</S.TextMessage>
 }
 
 Form.Root = Root;
@@ -43,3 +47,4 @@ Form.Field = Field;
 Form.Label = Label;
 Form.Control = Control;
 Form.TextMessage = TextMessage;
+Form.Submit = Submit;

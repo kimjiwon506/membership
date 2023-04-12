@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import AppRoutes from "./AppRoutes";
 
+import './styles'
 import './assets/styles/reset.css'
 
 function App() {
