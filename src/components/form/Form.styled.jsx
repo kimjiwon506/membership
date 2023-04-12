@@ -20,4 +20,6 @@ export const Control = styled.input`
 `
 export const TextMessage = styled.p``
 
-export const Submit = styled.button``
+export const Submit = styled.button`
+    width: 100%;
+`

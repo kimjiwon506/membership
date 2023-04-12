@@ -14,7 +14,7 @@ export const Form = forwardRef(function Form(props){
 
 const Root = forwardRef(function Root(props,ref){
         return (
-        <S.Root ref={ref} action=''>
+        <S.Root ref={ref} action={props.action}>
             {props.children}
         </S.Root>
     )
