@@ -16,3 +16,7 @@ export const CheckBox = styled.div`
 export const CheckButton = styled.div`
     display: flex;
 `
+
+export const Space = styled.div`
+    margin-top: 30px;
+`

@@ -31,7 +31,7 @@ const Label = forwardRef(function Label(props, ref){
 })
 
 const Control = forwardRef(function Control(props, ref){
-    return <S.Control ref={ref} type={props.type} placeholder={props.placeholder} />
+    return <S.Control ref={ref} type={props.type} placeholder={props.placeholder} onClick={props.onClick} readOnly={props.readOnly}  />
 });
 
 const Submit = function Submit(props){

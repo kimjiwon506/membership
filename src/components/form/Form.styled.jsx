@@ -17,9 +17,21 @@ export const Control = styled.input`
     outline: none;
     border-bottom: 1px solid #ccc;
     margin-bottom: 5px;
+    
+    &::placeholder {
+        color: #ccc;
+    }
 `
-export const TextMessage = styled.p``
+export const TextMessage = styled.p`
+    font-size: 12px;
+    color: #555;
+`
 
 export const Submit = styled.button`
     width: 100%;
+    padding: 15px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    background: orange;
+    color: white;
 `

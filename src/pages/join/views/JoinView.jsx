@@ -1,9 +1,15 @@
-import { Form } from 'components/form/Form';
 import React from 'react';
+import { Form } from 'components/form/Form';
+import Modal from 'components/modal/Modal';
+
+import DaumPostcode from 'react-daum-postcode';
 
 import * as S from "./JoinView.styled";
 
+
 function JoinView() {
+    const onCompletePost = () => {}
+    const isOpenModal = () => {}
     return (
         <S.Wrapper>
             <Form.Root action="">
@@ -26,9 +32,19 @@ function JoinView() {
                         <Form.TextMessage>비밀번호가 다릅니다</Form.TextMessage>
                     </S.Box>
                     <S.Box>
-                        <Form.Control type="text" placeholder="주소찾기"></Form.Control>
+                        <Modal>
+                            <Modal.Portal>
+                            <Form.Control type="text" placeholder="주소찾기" onClick={isOpenModal} readOnly="readOnly" />
+                                <Modal.Item>
+                                <DaumPostcode
+                                    onComplete={onCompletePost}
+                                ></DaumPostcode>
+                                </Modal.Item>
+                            </Modal.Portal>
+                        </Modal>
                         <Form.Control type="text" placeholder="상세주소"></Form.Control>
                     </S.Box>
+                    <S.Space />
                     <Form.Submit>회원가입</Form.Submit>
                 </Form.Field>
             </Form.Root>
