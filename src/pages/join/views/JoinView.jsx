@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Form } from 'components/form/Form';
 import Modal from 'components/modal/Modal';
 
@@ -8,12 +8,12 @@ import * as S from "./JoinView.styled";
 
 
 function JoinView() {
+    const postRef = useRef(null);
     const [postValue, setPostValue] = useState('')
     const onCompletePost = (data) => {
-        console.log(data);
-        setPostValue(data.address)
+        setPostValue(data.address);
+        postRef.current = false;
     }
-    const isOpenModal = () => {}
     return (
         <S.Wrapper>
             <Form.Root action="">
@@ -37,8 +37,8 @@ function JoinView() {
                     </S.Box>
                     <S.Box>
                         <Modal>
-                            <Modal.Portal>
-                            <Form.Control type="text" placeholder="주소찾기" onClick={isOpenModal} value={postValue} readOnly="readOnly" />
+                            <Modal.Portal ref={postRef}>
+                                <Form.Control ref={postRef} type="text" placeholder="주소찾기" value={postValue} readOnly="readOnly" />
                                 <Modal.Item>
                                     <S.PostBox className='postbox'>
                                         <DaumPostcode
