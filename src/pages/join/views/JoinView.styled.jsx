@@ -20,3 +20,7 @@ export const CheckButton = styled.div`
 export const Space = styled.div`
     margin-top: 30px;
 `
+export const PostBox = styled.div`
+    width: 600px;
+    margin: 0 auto;
+`

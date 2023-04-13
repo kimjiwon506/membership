@@ -1,4 +1,3 @@
-import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export const Portal = styled.div`
@@ -14,5 +13,4 @@ export const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
 `

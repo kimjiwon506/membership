@@ -20,7 +20,7 @@ function Portal (props) {
     const {open, toggle} = useContext(ModalContext);
 
     return(
-        <S.Portal onClick={() => toggle(!open)}>
+        <S.Portal onClick={React.useCallback(()=> toggle(!open), [open, toggle])}>
             {props.children}
         </S.Portal>
     )
@@ -29,7 +29,7 @@ function Portal (props) {
 function Item (props){
     const { open } = useContext(ModalContext);
     return(
-        open && <S.Item className='test'>{props.children}</S.Item>
+        open && <S.Item>{props.children}</S.Item>
     )
 }
 

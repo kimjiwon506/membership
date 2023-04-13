@@ -12,6 +12,7 @@ export const Label = styled.label`
 `
 export const Control = styled.input`
     width: ${(props) => props.type === ("text" || "textarea") && "100%" };
+    cursor: ${(props) => props.readOnly && 'pointer'};
     border: none;
     padding: 5px;
     outline: none;
