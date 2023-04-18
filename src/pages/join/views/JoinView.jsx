@@ -38,7 +38,7 @@ function JoinView() {
                     <S.Box>
                         <Modal>
                             <Modal.Portal ref={postRef}>
-                                <Form.Control ref={postRef} type="text" placeholder="주소찾기" value={postValue} readOnly="readOnly" />
+                                <Form.Control type="text" placeholder="주소찾기" value={postValue} readOnly="readOnly" />
                                 <Modal.Item>
                                     <S.PostBox className='postbox'>
                                         <DaumPostcode
